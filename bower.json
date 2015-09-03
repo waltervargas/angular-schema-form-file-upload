@@ -1,0 +1,29 @@
+{
+  "name": "angular-schema-form-file-upload",
+  "version": "0.0.1",
+  "homepage": "https://github.com/waltervargas/angular-schema-form-file-upload",
+  "authors": [
+    "Walter Vargas <walter@flux7.com>"
+  ],
+  "description": "Angular Schemaform file upload",
+  "main": "file-upload.min.js",
+  "keywords": [
+    "angular-schema-form",
+    "angular",
+    "form",
+    "json-schema",
+    "file",
+    "upload"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-schema-form": "~0.8.3"
+  }
+}
