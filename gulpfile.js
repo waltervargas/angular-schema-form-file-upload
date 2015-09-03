@@ -7,7 +7,6 @@ var minifyHtml = require('gulp-minify-html');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var streamqueue = require('streamqueue');
-var jscs = require('gulp-jscs');
 
 gulp.task('minify', function() {
   var stream = streamqueue({objectMode: true});
@@ -49,15 +48,9 @@ gulp.task('non-minified-dist', function() {
 
 });
 
-gulp.task('jscs', function() {
-  gulp.src('./src/**/*.js')
-      .pipe(jscs());
-});
-
 gulp.task('default', [
   'minify',
-  'non-minified-dist',
-  'jscs'
+  'non-minified-dist'
 ]);
 
 gulp.task('watch', function() {

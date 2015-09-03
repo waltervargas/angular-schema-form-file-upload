@@ -1,7 +1,6 @@
 angular.module('schemaForm').config(
 ['schemaFormProvider', 'schemaFormDecoratorsProvider', 'sfPathProvider',
   function (schemaFormProvider, schemaFormDecoratorsProvider, sfPathProvider) {
-
             var fileUpload = function (name, schema, options) {
                 if (schema.type === 'object' && schema.format == 'file') {
                     var f = schemaFormProvider.stdFormObj(name, schema, options);
@@ -14,8 +13,14 @@ angular.module('schemaForm').config(
 
             schemaFormProvider.defaults.string.unshift(fileUpload);
 
-            schemaFormDecoratorsProvider.addMapping('bootstrapDecorator', 'colorpicker',
-                'directives/decorators/bootstrap/fileUpload/file-upload.html');
-            schemaFormDecoratorsProvider.createDirective('fileUpload',
-                'directives/decorators/bootstrap/fileUpload/file-upload.html');
+            schemaFormDecoratorsProvider.addMapping(
+                'bootstrapDecorator', 
+                'colorpicker',
+                'directives/decorators/bootstrap/fileUpload/file-upload.html'
+            );
+            
+            schemaFormDecoratorsProvider.createDirective(
+                'fileUpload',
+                'directives/decorators/bootstrap/fileUpload/file-upload.html'
+            );
   }]);
