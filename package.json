@@ -1,0 +1,37 @@
+{
+  "name": "angular-schema-form-file-upload",
+  "version": "1.0.0",
+  "description": "Angular Schemaform file upload",
+  "main": "gulpfile.js",
+  "readme": "README.md",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "gulp-angular-templatecache": "^1.2.1",
+    "gulp-concat": "^2.2.0",
+    "gulp-jscs": "^1.1.0",
+    "gulp-minify-html": "^0.1.1",
+    "gulp-uglify": "^0.2.1",
+    "streamqueue": "^1.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waltervargas/angular-schema-form-file-upload.git"
+  },
+  "keywords": [
+    "angular-schema",
+    "file-upload",
+    "file",
+    "upload"
+  ],
+  "author": "Walter Vargas <walter@flux7.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/waltervargas/angular-schema-form-file-upload/issues"
+  },
+  "homepage": "https://github.com/waltervargas/angular-schema-form-file-upload#readme"
+}
