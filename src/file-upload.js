@@ -36,6 +36,7 @@ angular.module('schemaForm').directive('onReadFile', function ($parse) {
                 reader.onload = function (onLoadEvent) {
                     // put into ngModel the file content.
                     ngModelCtrl[0].$setViewValue(onLoadEvent.target.result);
+                    console.log(onLoadEvent.target);
                 };
                 reader.readAsText((onChangeEvent.srcElement || onChangeEvent.target).files[0]);
             });

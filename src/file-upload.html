@@ -6,7 +6,8 @@
                type="file"
                on-read-file/>
         
-        <span ng-show="$$value$$" class="title">{{ $$value$$ }}</span>
+        <span ng-show="$$value$$" class="bg-info">File Content: {{ $$value$$ }}</span>
+        <span ng-show="!$$value$$" class="bg-danger">It has not yet uploaded a file</span>
     </div>
     <span class="help-block">{{ (hasError() && errorMessage(schemaError())) || form.description}}</span>
 </div>

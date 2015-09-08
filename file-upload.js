@@ -1,4 +1,4 @@
-angular.module("schemaForm").run(["$templateCache", function($templateCache) {$templateCache.put("directives/decorators/bootstrap/fileUpload/file-upload.html","<div class=\"form-group\" ng-class=\"{\'has-error\': hasError()}\">\n    <label class=\"control-label\" ng-show=\"showTitle()\">{{form.title}}</label>\n    <div>\n        \n        <input ng-model=\"$$value$$\" \n               type=\"file\"\n               on-read-file/>\n        \n        <span ng-show=\"$$value$$\" class=\"title\">{{ $$value$$ }}</span>\n    </div>\n    <span class=\"help-block\">{{ (hasError() && errorMessage(schemaError())) || form.description}}</span>\n</div>");}]);
+angular.module("schemaForm").run(["$templateCache", function($templateCache) {$templateCache.put("directives/decorators/bootstrap/fileUpload/file-upload.html","<div class=\"form-group\" ng-class=\"{\'has-error\': hasError()}\">\n    <label class=\"control-label\" ng-show=\"showTitle()\">{{form.title}}</label>\n    <div>\n        \n        <input ng-model=\"$$value$$\" \n               type=\"file\"\n               on-read-file/>\n        \n        <span ng-show=\"$$value$$\" class=\"bg-info\">File Content: {{ $$value$$ }}</span>\n        <span ng-show=\"!$$value$$\" class=\"bg-danger\">It has not yet uploaded a file</span>\n    </div>\n    <span class=\"help-block\">{{ (hasError() && errorMessage(schemaError())) || form.description}}</span>\n</div>");}]);
 angular.module('schemaForm').config(
 ['schemaFormProvider', 'schemaFormDecoratorsProvider', 'sfPathProvider',
   function (schemaFormProvider, schemaFormDecoratorsProvider, sfPathProvider) {
@@ -37,6 +37,7 @@ angular.module('schemaForm').directive('onReadFile', function ($parse) {
                 reader.onload = function (onLoadEvent) {
                     // put into ngModel the file content.
                     ngModelCtrl[0].$setViewValue(onLoadEvent.target.result);
+                    console.log(onLoadEvent.target);
                 };
                 reader.readAsText((onChangeEvent.srcElement || onChangeEvent.target).files[0]);
             });
