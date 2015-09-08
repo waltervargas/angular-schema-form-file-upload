@@ -1,12 +1,12 @@
 <div class="form-group" ng-class="{'has-error': hasError()}">
     <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
-    <div ng-init="defaultOptions = {
-                 parseFile: 'functionName',
-                }">
-    </div>
     <div>
-        <span ng-show="$$value$$.file_name" class="title">{{$$value$$.file_name}}</span>
+        
+        <input ng-model="$$value$$" 
+               type="file"
+               on-read-file/>
+        
+        <span ng-show="$$value$$" class="title">{{ $$value$$ }}</span>
     </div>
-    <h4> This is my template </h4>
     <span class="help-block">{{ (hasError() && errorMessage(schemaError())) || form.description}}</span>
 </div>
